@@ -1,0 +1,31 @@
+.weather {
+  text-align: left !important;
+}
+.main {
+  margin-top: 2rem;
+  max-width: 80vw !important;
+}
+.table {
+  width: 100%;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+}
+.row {
+  box-sizing: border-box;
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.row:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+.row__left {
+  width: 40%;
+  text-align: left;
+  padding: 5px;
+  border-right: 1px solid #ddd;
+}
+.row__right {
+  text-align: left;
+  padding: 5px;
+}
