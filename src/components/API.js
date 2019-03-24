@@ -17,15 +17,27 @@ function API() {
   let location = useGeolocation();
   useEffect(() => {
     if (location) {
-      fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?lat=${
-          location.latitude
-        }&lon=${
-          location.longitude
-        }&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
-      )
-        .then(res => res.json())
-        .then(data => setData(data));
+      if (localStorage.getItem("app:react-weather")) {
+        console.log("YAY!!!");
+        let data = JSON.parse(localStorage.getItem("app:react-weather"));
+        console.log("localstorage", data);
+        setData(data);
+        return;
+      } else {
+        console.log("NAH!!!");
+        fetch(
+          `http://api.openweathermap.org/data/2.5/forecast?lat=${
+            location.latitude
+          }&lon=${
+            location.longitude
+          }&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
+        )
+          .then(res => res.json())
+          .then(data => {
+            localStorage.setItem("app:react-weather", JSON.stringify(data));
+            setData(data);
+          });
+      }
     }
   }, [location]);
 

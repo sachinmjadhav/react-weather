@@ -1,3 +1,5 @@
+// Beaufort Scale for wind speed
+
 export default function windSpeed(num) {
   let wind;
   if (num < 0.5) {
