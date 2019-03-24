@@ -42,7 +42,7 @@ input {
   padding: 0.4rem 0.8rem;
   cursor: pointer;
 }
-@media (max-width: 300px) {
+@media (max-width: 400px) {
   .form__field {
     flex-flow: column;
   }
