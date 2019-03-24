@@ -1,3 +1,7 @@
+.nav_title {
+  margin: 0 auto !important;
+  cursor: pointer;
+}
 .container {
   max-width: 1024px !important;
   padding: 1.5rem;

@@ -8,7 +8,12 @@ function Navbar() {
     <div>
       <AppBar position="static" color="default">
         <Toolbar>
-          <Typography variant="h4" color="inherit" style={{ margin: "0 auto" }}>
+          <Typography
+            variant="h4"
+            color="inherit"
+            className="nav_title"
+            onClick={() => window.location.reload()}
+          >
             Weather Forecast
           </Typography>
         </Toolbar>
