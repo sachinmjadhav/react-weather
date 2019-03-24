@@ -1,0 +1,74 @@
+.forecast__table {
+  width: 96%;
+  border: 1px solid #ddd;
+}
+.forecast__title {
+  color: #555;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.forecast__row {
+  box-sizing: border-box;
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  height: 100px;
+}
+.forecast__row:first-child {
+  background-color: #f9f9f9;
+}
+.forecast__table-left {
+  height: 100px;
+  width: 100%;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+.forecast__table-right {
+  width: 60%;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+.forecast__table-left:last-child {
+  border: none;
+}
+.forecast__temp {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-right: 5px;
+  margin-bottom: 1px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  color: #000;
+}
+.forecast__temp-max {
+  background-color: orange;
+}
+.forecast__temp-min {
+  background-color: lightgray;
+}
+.forecast__temp-desc {
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+.forecast__wind {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+.forecast__humidity {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+.forecast__clouds {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+.forecast__pressure {
+  font-size: 0.8rem;
+  padding: 5px;
+}

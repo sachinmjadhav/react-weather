@@ -1,8 +1,13 @@
 .weather {
   text-align: left !important;
 }
+.weather-title {
+  color: #333;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 1.5rem;
+}
 .main {
-  margin-top: 2rem;
   max-width: 80vw !important;
 }
 .table {
@@ -20,7 +25,7 @@
   background-color: #f9f9f9;
 }
 .row__left {
-  width: 40%;
+  width: 35%;
   text-align: left;
   padding: 5px;
   border-right: 1px solid #ddd;
@@ -28,4 +33,27 @@
 .row__right {
   text-align: left;
   padding: 5px;
+}
+.temp {
+  display: flex;
+  align-items: center;
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin: -25px 0;
+}
+.icon {
+  padding: 0 10px;
+}
+.disclaimer {
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  color: #888;
+}
+@media (max-width: 700px) {
+  .main {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+  }
 }

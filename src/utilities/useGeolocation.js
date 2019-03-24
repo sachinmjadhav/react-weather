@@ -7,21 +7,26 @@ let options = {
 };
 
 const useGeolocation = () => {
+  // location - variable used to store location data from geolocation API => Object
   const [location, setLocation] = useState(null);
   useEffect(() => {
     if (navigator.geolocation) {
       // get location
       navigator.geolocation.getCurrentPosition(
+        // success function
         pos => {
           // check to avoid refetching geolocation in firefox
           if (location && location.accuracy === pos.coords.accuracy) return;
           setLocation(pos.coords);
         },
+
+        // error function
         err => console.log(err),
+
+        // optional options object
         options
       );
     }
-    console.log(location);
   }, [location]);
   return location;
 };

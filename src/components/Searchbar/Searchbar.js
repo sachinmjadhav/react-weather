@@ -3,11 +3,12 @@ import "./Searchbar.css";
 
 function Searchbar({ value, handleChange, handleSubmit }) {
   return (
-    <form onSubmit={handleSubmit} className="search">
+    <form onSubmit={handleSubmit} className="search" autoComplete="off">
       <div className="form__field">
         <input
           type="search"
           name="search"
+          autoFocus
           placeholder="Your city name"
           className="form__input"
           onChange={handleChange}

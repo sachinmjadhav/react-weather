@@ -8,8 +8,9 @@ canvas {
 }
 .title {
   text-align: center;
-  font-family: "Montserrat";
-  font-size: 30px;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 34px;
   color: #d26c22;
 }
 @media (max-width: 700px) {

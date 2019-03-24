@@ -8,10 +8,9 @@ function Chart({ data }) {
   // Temperature
   let temps = items.map(item => item.main.temp);
   temps = temps.slice(0, 10);
-  console.log(Math.max(...temps));
 
   // Time
-  let date = items.map(item => item.dt).slice(0, 10);
+  let date = items.map(item => item.dt).slice(0, 9);
   let times = date.map(time => getTime(time));
 
   useEffect(() => {
@@ -26,14 +25,16 @@ function Chart({ data }) {
         label: `Weather in ${data.city.name}, ${data.city.country}`,
         data: temps,
         backgroundColor: "transparent",
-        borderColor: "#4bc0c0"
+        borderColor: "#4bc0c0",
+        pointBorderColor: "#4bc0c0",
+        pointBackgroundColor: "#4bc0c0"
       }
     ]
   };
 
   return (
     data && (
-      <div style={{ marginTop: "2rem" }}>
+      <div>
         <Line
           options={{
             responsive: true,

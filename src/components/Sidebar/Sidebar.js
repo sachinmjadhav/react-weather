@@ -4,17 +4,28 @@ import windSpeed from "../../utilities/windSpeed";
 
 function Sidebar({ data }) {
   const current = data.list[0];
+  // console.log("current", current);
   return (
     <div className="main">
       <div className="weather">
-        <h3>
+        <h3 className="weather-title">
           Weather in {data.city.name}, {data.city.country}
         </h3>
-        <p style={{ fontSize: "1.7rem", fontWeight: "bold" }}>
-          {current.main.temp}&deg;C
-        </p>
+
+        <div className="temp">
+          <img
+            src={`http://openweathermap.org/img/w/${
+              current.weather[0].icon
+            }.png`}
+            alt=""
+            className="icon"
+          />
+          <p>{current.main.temp}&deg;C</p>
+        </div>
+
         <p>{current.weather[0].description}</p>
       </div>
+
       <table className="table">
         <tbody>
           <tr className="row">
@@ -43,6 +54,11 @@ function Sidebar({ data }) {
           </tr>
         </tbody>
       </table>
+      <p className="disclaimer">
+        The weather forecast is displayed in accordance with your local time.
+        Please pay attention to it when you will watch the weather in another
+        time zone.
+      </p>
     </div>
   );
 }
