@@ -108,8 +108,8 @@ function API() {
           </Grid>
         </Grid>
         <Grid container spacing={24}>
-          <Grid item xs={1} md={4} />
-          <Grid item xs={11} md={8}>
+          <Grid item xs={12} md={4} />
+          <Grid item xs={12} md={8}>
             {forecast && forecast.cod === "200" ? (
               <Forecast forecast={forecast} />
             ) : (
