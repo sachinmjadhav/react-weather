@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import Forecast from "./Forecast/Forecast";
 import Chart from "./Chart/Chart";
 import Grid from "@material-ui/core/Grid";
+import Loader from "../assets/loader.gif";
 
 function API() {
   // input - variabel to store input field data => String
@@ -100,7 +101,11 @@ function API() {
     setInput("");
   };
 
-  return (
+  return !data ? (
+    <div className="loader">
+      <img src={Loader} alt="" />
+    </div>
+  ) : (
     <div>
       <Searchbar
         value={input}
