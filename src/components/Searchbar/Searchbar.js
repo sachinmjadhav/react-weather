@@ -8,7 +8,6 @@ function Searchbar({ value, handleChange, handleSubmit }) {
         <input
           type="search"
           name="search"
-          autoFocus
           placeholder="Your city name"
           className="form__input"
           onChange={handleChange}
