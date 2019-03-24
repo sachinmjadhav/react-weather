@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
-import getTime from "../../utilities/getDate";
+import getTime from "../../utilities/getTime";
 
 function Chart({ data }) {
   const [items, setItems] = useState(data.list);

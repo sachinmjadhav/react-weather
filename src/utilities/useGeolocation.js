@@ -1,3 +1,4 @@
+// Custom hook to get geolocation data from the browser navigator object
 import { useState, useEffect } from "react";
 
 let options = {
