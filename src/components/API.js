@@ -17,6 +17,7 @@ function API() {
   let location = useGeolocation();
   useEffect(() => {
     if (location) {
+      // get data from localStorage if already stored
       if (localStorage.getItem("app:react-weather")) {
         console.log("YAY!!!");
         let data = JSON.parse(localStorage.getItem("app:react-weather"));
@@ -26,7 +27,7 @@ function API() {
       } else {
         console.log("NAH!!!");
         fetch(
-          `http://api.openweathermap.org/data/2.5/forecast?lat=${
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${
             location.latitude
           }&lon=${
             location.longitude
@@ -34,6 +35,7 @@ function API() {
         )
           .then(res => res.json())
           .then(data => {
+            // store data in localStorage
             localStorage.setItem("app:react-weather", JSON.stringify(data));
             setData(data);
           });
@@ -46,7 +48,7 @@ function API() {
   useEffect(() => {
     if (query) {
       fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
       )
         .then(res => res.json())
         .then(result => {
@@ -60,7 +62,7 @@ function API() {
   useEffect(() => {
     if (query) {
       fetch(
-        `http://api.openweathermap.org/data/2.5/forecast/daily?q=${query}&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast/daily?q=${query}&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
       )
         .then(res => res.json())
         .then(result => {
@@ -68,7 +70,7 @@ function API() {
         });
     } else if (location) {
       fetch(
-        `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${
+        `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${
           location.latitude
         }&lon=${
           location.longitude
