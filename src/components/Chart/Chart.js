@@ -8,6 +8,7 @@ function Chart({ data }) {
   // Temperature
   let temps = items.map(item => item.main.temp);
   temps = temps.slice(0, 10);
+  console.log(temps);
 
   // Time
   let date = items.map(item => item.dt).slice(0, 9);
@@ -41,7 +42,23 @@ function Chart({ data }) {
             scales: {
               gridLines: {
                 display: false
-              }
+              },
+              yAxes: [
+                {
+                  scaleLabel: {
+                    display: true,
+                    labelString: "Temperature in \u00b0C"
+                  }
+                }
+              ],
+              xAxes: [
+                {
+                  scaleLabel: {
+                    display: true,
+                    labelString: "Time in 24H format"
+                  }
+                }
+              ]
             },
             maintainAspectRatio: true,
             legend: {
