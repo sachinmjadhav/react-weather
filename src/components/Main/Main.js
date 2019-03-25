@@ -76,7 +76,12 @@ function Main() {
           <Grid item xs={12} md={4}>
             {data && data.cod === "200" ? <Sidebar data={data} /> : ""}
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid
+            item
+            xs={12}
+            md={8}
+            style={{ justifyContent: "center", alignItems: "center" }}
+          >
             {data && data.cod === "200" ? (
               <Chart data={data} />
             ) : (
@@ -85,8 +90,14 @@ function Main() {
           </Grid>
         </Grid>
         <Grid container spacing={24}>
-          <Grid item xs={12} md={4} />
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={4}>
+            <p className="disclaimer">
+              The weather forecast is displayed in accordance with your local
+              time. Please pay attention to it when you will watch the weather
+              in another time zone.
+            </p>
+          </Grid>
+          <Grid item xs={12} md={8} className="forecast__main">
             {forecast && forecast.cod === "200" ? (
               <Forecast forecast={forecast} />
             ) : (

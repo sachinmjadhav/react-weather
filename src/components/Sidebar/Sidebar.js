@@ -22,8 +22,7 @@ function Sidebar({ data }) {
           />
           <p>{current.main.temp}&deg;C</p>
         </div>
-
-        <p>{current.weather[0].description}</p>
+        <p className="temp_desc">{current.weather[0].description}</p>
       </div>
 
       <table className="table">
@@ -54,11 +53,6 @@ function Sidebar({ data }) {
           </tr>
         </tbody>
       </table>
-      <p className="disclaimer">
-        The weather forecast is displayed in accordance with your local time.
-        Please pay attention to it when you will watch the weather in another
-        time zone.
-      </p>
     </div>
   );
 }

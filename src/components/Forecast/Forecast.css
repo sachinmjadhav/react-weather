@@ -1,6 +1,9 @@
+.scroll-div {
+  max-height: 500px;
+  overflow-y: scroll;
+}
 .forecast__table {
   width: 96%;
-  border: 1px solid #ddd;
 }
 .forecast__title {
   color: #555;
@@ -15,16 +18,30 @@
   border-color: inherit;
   height: 100px;
 }
-.forecast__row:first-child {
+.forecast__row:nth-child(odd) {
   background-color: #f9f9f9;
 }
 .forecast__table-left {
   height: 100px;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   border-bottom: 1px solid #ddd;
   display: flex;
+  flex-flow: column;
   align-items: center;
+}
+.forecast__table-left_date {
+  display: block;
+  margin-top: 12px;
+  padding: 4px 0;
+  background-color: #ccc;
+  width: 100%;
+  text-align: center;
+}
+.forecast__table-left_time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .forecast__table-right {
   width: 60%;
@@ -43,13 +60,9 @@
   margin-bottom: 1px;
   border-radius: 5px;
   font-size: 0.75rem;
-  color: #000;
-}
-.forecast__temp-max {
   background-color: orange;
-}
-.forecast__temp-min {
-  background-color: lightgray;
+  margin-left: 5px;
+  color: #000;
 }
 .forecast__temp-desc {
   font-size: 0.9rem;
