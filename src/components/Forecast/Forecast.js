@@ -40,7 +40,7 @@ function Forecast({ forecast }) {
                   {day.dt}
                 </Moment>
                 <img
-                  src={`http://openweathermap.org/img/w/${
+                  src={`https://openweathermap.org/img/w/${
                     day.weather[0].icon
                   }.png`}
                   alt=""
