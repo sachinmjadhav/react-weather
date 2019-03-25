@@ -14,7 +14,7 @@ function Sidebar({ data }) {
 
         <div className="temp">
           <img
-            src={`http://openweathermap.org/img/w/${
+            src={`https://openweathermap.org/img/w/${
               current.weather[0].icon
             }.png`}
             alt=""

@@ -8,7 +8,7 @@ export default function useForecastWeather(query) {
   useEffect(() => {
     if (query) {
       fetch(
-        `https://api.openweathermap.org/data/2.5/forecast/daily?q=${query}&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=c7cec94be5f48433614a71099719a8e4&units=metric`
       )
         .then(res => res.json())
         .then(result => {
@@ -16,14 +16,15 @@ export default function useForecastWeather(query) {
         });
     } else if (location) {
       fetch(
-        `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${
           location.latitude
         }&lon=${
           location.longitude
-        }&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
+        }&appid=c7cec94be5f48433614a71099719a8e4&units=metric`
       )
         .then(res => res.json())
         .then(data => {
+          console.log("loca", data);
           setForecast(data);
         });
     }

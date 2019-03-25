@@ -5,6 +5,23 @@ import useGeolocation from "../utilities/useGeolocation";
 export function useGeoWeather() {
   let location = useGeolocation();
   const [data, setData] = useState(null);
+
+  // effect to clear localstorage after every 2hrs
+  useEffect(() => {
+    let hours = 2;
+    let now = new Date().getTime();
+    let setupTime = localStorage.getItem("setupTime");
+    if (setupTime === null) {
+      localStorage.setItem("setupTime", now);
+    } else {
+      if (now - setupTime > hours * 60 * 60 * 1000) {
+        console.log("clearing console");
+        localStorage.clear();
+        localStorage.setItem("setupTime", now);
+      }
+    }
+  }, []);
+
   useEffect(() => {
     if (location) {
       // get data from localStorage if already stored
@@ -21,7 +38,7 @@ export function useGeoWeather() {
             location.latitude
           }&lon=${
             location.longitude
-          }&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
+          }&appid=c7cec94be5f48433614a71099719a8e4&units=metric`
         )
           .then(res => res.json())
           .then(data => {
@@ -40,7 +57,7 @@ export function useQueryWeather(query) {
   useEffect(() => {
     if (query) {
       fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=c7cec94be5f48433614a71099719a8e4&units=metric`
       )
         .then(res => res.json())
         .then(result => {

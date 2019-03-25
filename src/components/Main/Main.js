@@ -77,10 +77,10 @@ function Main() {
             {data && data.cod === "200" ? <Sidebar data={data} /> : ""}
           </Grid>
           <Grid item xs={12} md={8}>
-            {data && data.cod === "404" ? (
-              <h3>{data.message.toUpperCase()}</h3>
+            {data && data.cod === "200" ? (
+              <Chart data={data} />
             ) : (
-              data && <Chart data={data} />
+              data && <h3>{data.message.toUpperCase()}</h3>
             )}
           </Grid>
         </Grid>
