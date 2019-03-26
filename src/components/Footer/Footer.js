@@ -4,7 +4,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <div className="footer">
-      &copy; 2019 | OpenWeather-API | Maintained by{" "}
+      &copy; 2019 | OpenWeather-API | Developed by{" "}
       <a
         href="https://github.com/sachinmjadhav"
         target="_blank"
