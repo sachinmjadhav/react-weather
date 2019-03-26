@@ -45,7 +45,7 @@ function Main() {
   const handleSubmit = e => {
     e.preventDefault();
     // if input field is empty - return
-    if (inputRef === "") return;
+    if (inputRef.current.value === "") return;
 
     setQuery(inputRef.current.value);
 
