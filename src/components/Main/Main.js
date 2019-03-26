@@ -66,12 +66,7 @@ function Main() {
           <Grid item xs={12} md={4}>
             {data && data.cod === "200" ? <Sidebar data={data} /> : ""}
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={8}
-            style={{ justifyContent: "center", alignItems: "center" }}
-          >
+          <Grid item xs={12} md={8}>
             {data && data.cod === "200" ? (
               <Chart data={data} />
             ) : (
