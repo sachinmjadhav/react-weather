@@ -91,11 +91,15 @@ function Main() {
         </Grid>
         <Grid container spacing={24}>
           <Grid item xs={12} md={4}>
-            <p className="disclaimer">
-              The weather forecast is displayed in accordance with your local
-              time. Please pay attention to it when you will watch the weather
-              in another time zone.
-            </p>
+            {forecast && forecast.cod === "200" ? (
+              <p className="disclaimer">
+                The weather forecast is displayed in accordance with your local
+                time. Please pay attention to it when you will watch the weather
+                in another time zone.
+              </p>
+            ) : (
+              ""
+            )}
           </Grid>
           <Grid item xs={12} md={8} className="forecast__main">
             {forecast && forecast.cod === "200" ? (
