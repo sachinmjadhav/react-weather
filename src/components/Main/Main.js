@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useGeoWeather, useQueryWeather } from "../../utilities/useWeather";
 import useForecastWeather from "../../utilities/useForecastData";
 import Searchbar from "../Searchbar/Searchbar";
@@ -6,12 +6,11 @@ import Sidebar from "../Sidebar/Sidebar";
 import Forecast from "../Forecast/Forecast";
 import Chart from "../Chart/Chart";
 import Grid from "@material-ui/core/Grid";
-import Loader from "../../assets/loader.gif";
 import "./Main.css";
 
 function Main() {
-  // input - variabel to store input field data => String
-  const [input, setInput] = useState("");
+  // useRef to ref the input tag in search component
+  const inputRef = useRef("");
   // data - variable to store fetch data => Object
   const [data, setData] = useState(null);
 
@@ -42,34 +41,25 @@ function Main() {
     }
   }, [forecastData]);
 
-  // function to control input field
-  const handleChange = e => {
-    setInput(e.target.value);
-  };
-
   // function to handle submit request
   const handleSubmit = e => {
     e.preventDefault();
     // if input field is empty - return
-    if (input === "") return;
+    if (inputRef === "") return;
 
-    setQuery(input);
+    setQuery(inputRef.current.value);
 
     // set Input field to empty string after submit
-    setInput("");
+    inputRef.current.value = "";
   };
 
   return !data ? (
     <div className="loader">
-      <img src={Loader} alt="" />
+      <img src={require("../../assets/loader.gif")} alt="" />
     </div>
   ) : (
     <div>
-      <Searchbar
-        value={input}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
+      <Searchbar inputRef={inputRef} handleSubmit={handleSubmit} />
       <h2 className="title">Current weather and forecast</h2>
       <div className="container">
         <Grid container spacing={24}>
